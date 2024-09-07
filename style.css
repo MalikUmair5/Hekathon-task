@@ -72,34 +72,60 @@ body {
   display: none;
 }
 
-.btn_div{
+.btn_div {
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
+
+.profile_image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
 #toogle_button {
   background-color: #376092;
-  border: none; 
-  color: #ffffff; 
-  padding: 10px 20px; 
-  text-align: center; 
-  text-decoration: none; 
-  display: inline-block; 
-  font-size: 16px; 
-  margin: 10px 0; 
-  cursor: pointer; 
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
   border-radius: 4px; /* Rounded corners */
 }
 
 #toogle_button:hover {
-  background-color: #6087b8; 
+  background-color: #6087b8;
 }
 
 @media only screen and (max-width: 600px) {
   /* Styles for mobile devices */
+  .resume_container {
+    width: 100%;
+  }
+  .main_container {
+    flex-wrap: wrap;
+  }
+  .profile_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    right: -40px;
+    top: -10px;
+  }
+  .img_container {
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 768px) {
+  .resume_container {
+    width: 100%;
+  }
   /* Styles for tablet devices */
 }
 

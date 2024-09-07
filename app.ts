@@ -1,5 +1,6 @@
 // ? Milestone 1
 
+
 let toogle_button = document.getElementById("toogle_button");
 let general_skills = document.getElementById("general_skills");
 
