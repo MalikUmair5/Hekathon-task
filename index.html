@@ -7,25 +7,100 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+  <!-- Milestone 3 -->
+    
+    <div class="resume_form">
+      <h1 class="heading">Resume Form</h1>
+      <form>
+        <div class="form_group">
+        <!-- Personal Information -->
+<h2 class="sub_heading">Personal Information</h2>
+<label for="name">Name:</label>
+<input type="text" name="name" id="name_input" placeholder="Enter your full name" />
+
+<label for="profile_picture_input">Profile Picture:</label>
+<input type="file" name="profile_picture" id="profile_picture_input" accept="image/*" />
+
+<label for="contact_number">Contact Number:</label>
+<input type="tel" name="contact_number" id="contact_number_input" placeholder="Enter your contact number" />
+
+<label for="email">Email:</label>
+<input type="email" name="email" id="email_input" placeholder="Enter your email address" />
+
+<label for="dob">Date of Birth:</label>
+<input type="date" name="dob" id="dob_input" placeholder="Enter your date of birth" />
+
+<!-- Family Information -->
+<h2 class="sub_heading">Family Information</h2>
+<label for="father_name">Father's Name:</label>
+<input type="text" name="father_name" id="father_name_Input" placeholder="Enter your father's name" />
+
+<label for="cnic">CNIC No:</label>
+<input type="text" name="cnic" id="cnic_input" placeholder="Enter your CNIC number" />
+
+<!-- Professional Information -->
+<h2 class="sub_heading">Professional Information</h2>
+<label for="career_objective">Career Objective:</label>
+<input type="text" name="career_objective" id="career_objective_input" placeholder="Enter your career objective" />
+
+<label for="experience">Experience:</label>
+<input type="text" name="experience" id="experience" placeholder="Enter your work experience" />
+<button id="add_button" class="add_button my_button">Add</button>
+<div></div>
+
+
+<label for="technical_skills">Technical Skills:</label>
+<input type="text" name="technical_skills" id="technical_skills_input" placeholder="Enter your technical skills" />
+<button id="add_button" class="my_button add_button">Add</button>
+<div></div>
+
+<label for="general_skills">General Skills:</label>
+<input type="text" name="general_skills" id="general_skills_input" placeholder="Enter your general skills" />
+<button id="add_button" class="add_button my_button">Add</button>
+<div></div>
+
+<!-- Additional Information -->
+<h2 class="sub_heading">Additional Information</h2>
+<label for="languages">Languages:</label>
+<input type="text" name="languages" id="languages_input" placeholder="Enter languages separated by space" />
+<button id="add_button" class="add_button my_button">Add</button>
+<div></div>
+
+<label for="hobbies">Hobbies:</label>
+<input type="text" name="hobbies" id="hobbies_input" placeholder="Enter your hobbies" />
+<button id="add_button" class="add_button my_button">Add</button>
+<div></div>
+
+<label for="religion">Religion:</label>
+<input type="text" name="religion" id="religion_input" placeholder="Enter your religion" />
+
+<label for="marital_status">Marital Status:</label>
+<input type="text" name="marital_status_input" id="marital_status_input" placeholder="Enter your marital status" />
+
+          <button id="submit_button" class="my_button">Submit</button>
+
+        </div>
+    </div>
+
     <!-- Milestone 1 -->
     <div class="resume_container">
       <div class="top_blue"></div>
       <div class="main_container">
         <div class="left_container">
-          <h1 class="name_heading">Malik Umair</h1>
+          <h1 id="name_heading" class="name_heading">Malik Umair</h1>
           <div class="img_container">
-            <img class="profile_image" src="./assets/Profile.png" alt="">
+            <img id="profile_picture" class="profile_image" src="./assets/Profile.png" alt="">
           </div>
           <div class="sub_container mt-20">
             <h1 class="sub_heading mt-15">Contact:</h1>
-            <p class="text">0330-2842247</p>
+            <p id="user_contact" class="text">0330-2842247</p>
             <h1 class="sub_heading mt-10">Email:</h1>
-            <p class="text">malikumair.dev@gmail.com</p>
+            <p id="user_email" class="text">malikumair.dev@gmail.com</p>
           </div>
           <div class="sub_container mt-20">
             <h1 class="heading">Languages</h1>
             <hr class="line" />
-            <ul>
+            <ul id="user_Language">
               <li>Englihsh</li>
               <li>Urdu</li>
               <li>Hindko</li>
@@ -34,7 +109,7 @@
           <div class="sub_container mt-20">
             <h1 class="heading">Hobbies</h1>
             <hr class="line" />
-            <ul>
+            <ul id="user_hobbies">
               <li>Traveling</li>
               <li>Outing with Friend</li>
               <li>Watching Movies</li>
@@ -44,7 +119,7 @@
         <div class="right_container">
           <h1 class="heading">Career Objective</h1>
           <hr class="line" />
-          <p class="text">
+          <p id="career_objective" class="text">
             To work in a challenging environment demanding all my skills and
             efforts to explore and adapt myself in different fields and realize
             my potential where I get the opportunity for continuous learning.
@@ -55,29 +130,29 @@
             <table>
                 <tr>
                     <td>Father Name:</td>
-                    <td>Muhammad Khalid Khan</td>
+                    <td id="father_name">Muhammad Khalid Khan</td>
                 </tr>
                 <tr>
                     <td>Date of Birth:</td>
-                    <td>12-12-1996</td>
+                    <td id="user_DOB">12-12-1996</td>
                 </tr>
                 <tr>
                     <td>CNIC:</td>
-                    <td>42201-7717224-9</td>
+                    <td id="user_cnic">42201-7717224-9</td>
                 </tr>
                 <tr>
                     <td>Marital Status:</td>
-                    <td>Single</td>
+                    <td id="user_maritalStatus">Single</td>
                 </tr>
                 <tr>
                     <td>Religion</td>
-                    <td>Islam</td>
+                    <td id="user_relagion">Islam</td>
                 </tr>
             </table>
           </p>
           <h1 class="heading">Technical Skills</h1>
           <hr class="line" />
-            <ul>
+            <ul id="technical_Skills" >
                 <li>Type Script</li>
                 <li>React Js</li>
                 <li>Node Js</li>
@@ -85,14 +160,14 @@
             </ul>
           <h1 class="heading">Work Experience</h1>
           <hr class="line" />
-          <ul>
+          <ul id="user_experience">
             <li>06 years working experince as a <b>Computer Operator</b> in Private Shop.</li>
             <li>02 years working experince as a <b>Front-End Developer</b>.</li>
           </ul>
           <div id="general_skills">
             <h1 class="heading">General Skills</h1>
           <hr class="line" />
-          <ul>
+          <ul id="user_generalSkills">
             <li>Good Communication Skills</li>
             <li>Team Work</li>
             <li>Problem Solving</li>
@@ -101,11 +176,12 @@
           </div>
         </div>
       </div>
+      <div class="btn_div">
+        <button class="my_button"  id="toogle_button">Hide General Skills</button>
+     </div>
     </div>
 
-    <div class="btn_div">
-        <button id="toogle_button">Hide General Skills</button>
-     </div>
+
 
     <script src="./app.js"></script>
   </body>

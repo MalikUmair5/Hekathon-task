@@ -37,6 +37,7 @@ body {
   color: black;
   font-size: 18px;
   margin-bottom: 0px;
+  display: block;
 }
 
 .text {
@@ -83,7 +84,11 @@ body {
   height: 250px;
   border-radius: 50%;
 }
-#toogle_button {
+.profile_picture{
+  display: block;
+}
+
+.my_button {
   background-color: #376092;
   border: none;
   color: #ffffff;
@@ -92,13 +97,62 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px 0;
   cursor: pointer;
   border-radius: 4px; /* Rounded corners */
 }
 
-#toogle_button:hover {
+.my_button:hover {
   background-color: #6087b8;
+}
+
+.del_button {
+  background-color: #eb1831;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.del_button:hover {
+  background-color: #eb1831;
+}
+
+/* Milestone 3 */
+
+.resume_form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
+.resume_form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #376092;
+}
+
+.resume_form label{
+  display: block;
+}
+
+
+.resume_form input:focus {
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #6087b8; 
+  outline: none;
 }
 
 @media only screen and (max-width: 600px) {
