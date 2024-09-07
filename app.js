@@ -210,19 +210,123 @@ var user_generalSkills = document.getElementById("user_generalSkills");
         user_maritalStatus.innerText = maritalStatus.value;
         // Update the list of languages
         user_Language.innerHTML = listingforlanguages
-            .map(function (item) { return "<li>".concat(item, "</li>"); })
+            .map(function (item) { return "<li class=\"editable_section\">".concat(item, "</li>"); })
             .join("");
         user_experience.innerHTML = listingforexperince
-            .map(function (item) { return "<li>".concat(item, "</li>"); })
+            .map(function (item) { return "<li class=\"editable_section\">".concat(item, "</li>"); })
             .join("");
         technical_Skills.innerHTML = listingfortechnicalskills
-            .map(function (item) { return "<li>".concat(item, "</li>"); })
+            .map(function (item) { return "<li class=\"editable_section\">".concat(item, "</li>"); })
             .join("");
         user_generalSkills.innerHTML = listingforgeneralskills
-            .map(function (item) { return "<li>".concat(item, "</li>"); })
+            .map(function (item) { return "<li class=\"editable_section\">".concat(item, "</li>"); })
             .join("");
         user_hobbies.innerHTML = listingforhobbies
-            .map(function (item) { return "<li>".concat(item, "</li>"); })
+            .map(function (item) { return "<li class=\"editable_section\">".concat(item, "</li>"); })
             .join("");
     }
 });
+var editibleSections = document.querySelectorAll(".editable_section");
+// Function to make a section editable
+// General function to make elements editable
+function makeEditable(element) {
+    // Store the original content
+    var originalContent = element.innerText;
+    // Create an input field
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.value = originalContent;
+    input.className = 'editable-input';
+    // Replace the element's content with the input field
+    element.innerHTML = '';
+    element.appendChild(input);
+    // Automatically focus on the input
+    input.focus();
+    // Handle when the user clicks outside or presses Enter
+    var saveChanges = function () {
+        var newValue = input.value.trim();
+        var id = element.id; // Assuming each element has a unique ID
+        // Save to localStorage
+        if (id) {
+            if (newValue === '') {
+                localStorage.removeItem(id);
+                element.remove();
+            }
+            else {
+                localStorage.setItem(id, newValue);
+                element.innerHTML = newValue;
+            }
+        }
+        else {
+            if (newValue === '') {
+                element.remove();
+            }
+            else {
+                element.innerHTML = newValue;
+            }
+        }
+    };
+    // Save changes on blur or Enter key press
+    input.addEventListener('blur', saveChanges);
+    input.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            saveChanges();
+        }
+    });
+}
+// Function to attach editability to all <td> and <li> elements
+function attachEditableListeners() {
+    // Add editability to all <td> elements
+    var tdElements = document.querySelectorAll('td');
+    tdElements.forEach(function (td) {
+        td.addEventListener('click', function () {
+            makeEditable(td);
+        });
+    });
+    // Add editability to all <li> elements
+    var liElements = document.querySelectorAll('li');
+    liElements.forEach(function (li) {
+        makeEditable(li);
+    });
+}
+// Load saved data from localStorage
+function loadSavedData() {
+    var tdElements = document.querySelectorAll('td');
+    tdElements.forEach(function (td) {
+        var id = td.id;
+        if (id) {
+            var savedValue = localStorage.getItem(id);
+            if (savedValue) {
+                td.innerHTML = savedValue;
+            }
+        }
+    });
+    var liElements = document.querySelectorAll('li');
+    liElements.forEach(function (li) {
+        var id = li.id;
+        if (id) {
+            var savedValue = localStorage.getItem(id);
+            if (savedValue) {
+                li.innerHTML = savedValue;
+            }
+        }
+    });
+}
+// Example usage
+document.addEventListener('DOMContentLoaded', function () {
+    attachEditableListeners();
+    loadSavedData();
+});
+editibleSections.forEach(function (section) {
+    section.addEventListener("click", function (e) {
+        makeEditable(section);
+    });
+});
+function attachEditableListenersToLI() {
+    var listItems = document.querySelectorAll('li');
+    listItems.forEach(function (li) {
+        li.addEventListener('click', function () {
+            makeEditable(li);
+        });
+    });
+}

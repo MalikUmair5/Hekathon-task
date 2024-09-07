@@ -188,8 +188,6 @@ let user_experience = document.getElementById("user_experience");
 let technical_Skills = document.getElementById("technical_Skills");
 let user_generalSkills = document.getElementById("user_generalSkills");
 
-
-
 document.getElementById("submit_button")?.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -238,8 +236,14 @@ document.getElementById("submit_button")?.addEventListener("click", (e) => {
     validateInput(maritalStatus, "your marital status");
 
   const isExperienceValid = validateList(listingforexperince, "Experience");
-  const isTechnicalSkillsValid = validateList(listingfortechnicalskills, "Technical Skills");
-  const isGeneralSkillsValid = validateList(listingforgeneralskills, "General Skills");
+  const isTechnicalSkillsValid = validateList(
+    listingfortechnicalskills,
+    "Technical Skills"
+  );
+  const isGeneralSkillsValid = validateList(
+    listingforgeneralskills,
+    "General Skills"
+  );
   const isLanguagesValid = validateList(listingforlanguages, "Languages");
   const isHobbiesValid = validateList(listingforhobbies, "Hobbies");
 
@@ -264,20 +268,124 @@ document.getElementById("submit_button")?.addEventListener("click", (e) => {
 
     // Update the list of languages
     user_Language!.innerHTML = listingforlanguages
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => `<li class="editable_section">${item}</li>`)
       .join("");
     user_experience!.innerHTML = listingforexperince
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => `<li class="editable_section">${item}</li>`)
       .join("");
     technical_Skills!.innerHTML = listingfortechnicalskills
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => `<li class="editable_section">${item}</li>`)
       .join("");
     user_generalSkills!.innerHTML = listingforgeneralskills
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => `<li class="editable_section">${item}</li>`)
       .join("");
     user_hobbies!.innerHTML = listingforhobbies
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => `<li class="editable_section">${item}</li>`)
       .join("");
   }
 });
 
+let editibleSections = document.querySelectorAll(".editable_section");
+
+
+function makeEditable(element: HTMLElement) {
+  const originalContent = element.innerText;
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.value = originalContent;
+  input.className = 'editable-input';
+
+  element.innerHTML = '';
+  element.appendChild(input);
+
+  input.focus();
+
+  const saveChanges = () => {
+    const newValue = input.value.trim();
+    const id = element.id; 
+
+    if (id) {
+      if (newValue === '') {
+        localStorage.removeItem(id);
+        element.remove();
+      } else {
+        localStorage.setItem(id, newValue);
+        element.innerHTML = newValue;
+      }
+    } else {
+      if (newValue === '') {
+        element.remove();
+      } else {
+        element.innerHTML = newValue;
+      }
+    }
+  };
+
+  // Save changes on blur or Enter key press
+  input.addEventListener('blur', saveChanges);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      saveChanges();
+    }
+  });
+}
+
+function attachEditableListeners() {
+  const tdElements = document.querySelectorAll('td');
+  tdElements.forEach((td) => {
+    td.addEventListener('click', () => {
+      makeEditable(td as HTMLElement);
+    });
+  });
+
+  const liElements = document.querySelectorAll('li');
+  liElements.forEach((li) => {
+    makeEditable(li as HTMLElement);
+  });
+}
+
+function loadSavedData() {
+  const tdElements = document.querySelectorAll('td');
+  tdElements.forEach((td) => {
+    const id = td.id;
+    if (id) {
+      const savedValue = localStorage.getItem(id);
+      if (savedValue) {
+        td.innerHTML = savedValue;
+      }
+    }
+  });
+
+  const liElements = document.querySelectorAll('li');
+  liElements.forEach((li) => {
+    const id = li.id;
+    if (id) {
+      const savedValue = localStorage.getItem(id);
+      if (savedValue) {
+        li.innerHTML = savedValue;
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  attachEditableListeners();
+  loadSavedData();
+});
+
+
+editibleSections.forEach((section) => {
+  section.addEventListener("click", (e) => {
+    makeEditable(section as HTMLElement);
+  });
+});
+
+function attachEditableListenersToLI() {
+  const listItems = document.querySelectorAll('li');
+  listItems.forEach((li) => {
+    li.addEventListener('click', () => {
+      makeEditable(li as HTMLElement);
+    });
+  });
+}
