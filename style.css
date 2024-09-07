@@ -1,0 +1,108 @@
+/* Milestone One */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.resume_container {
+  width: 794px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+.top_blue {
+  height: 50px;
+  background-color: #376092;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.main_container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.heading {
+  color: #244061;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.name_heading {
+  color: #244061;
+  font-size: 32px;
+}
+
+.sub_heading {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.text {
+  font-size: 16px;
+  color: black;
+  margin: 0;
+}
+
+.line {
+  margin-top: 0 !important;
+}
+
+.right_container {
+  border: #4f81bd 3px solid;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.left_container {
+  width: 250px;
+}
+
+.sub_container {
+  margin-top: 30px;
+}
+
+.mt-15 {
+  margin-top: 15 px;
+}
+
+.hide_display {
+  display: none;
+}
+
+.btn_div{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#toogle_button {
+  background-color: #376092;
+  border: none; 
+  color: #ffffff; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 10px 0; 
+  cursor: pointer; 
+  border-radius: 4px; /* Rounded corners */
+}
+
+#toogle_button:hover {
+  background-color: #6087b8; 
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for mobile devices */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  /* Styles for tablet devices */
+}
+
+@media only screen and (min-width: 769px) {
+  /* Styles for desktop devices */
+}
