@@ -2,15 +2,14 @@
 var _a;
 var toogle_button = document.getElementById("toogle_button");
 var general_skills = document.getElementById("general_skills");
-toogle_button === null || toogle_button === void 0 ? void 0 : toogle_button.addEventListener("click", function () {
+toogle_button === null || toogle_button === void 0 ? void 0 : toogle_button.addEventListener("click", function (e) {
+    e.preventDefault();
     if (general_skills && toogle_button) {
         if (toogle_button.innerText === "Hide General Skills") {
-            console.log("hello Pakistan");
             general_skills.style.display = "none";
             toogle_button.innerText = "Show General Skills";
         }
         else if (toogle_button.innerText === "Show General Skills") {
-            console.log("hello Pakistan");
             general_skills.style.display = "block";
             toogle_button.innerText = "Hide General Skills";
         }
@@ -160,20 +159,46 @@ var user_generalSkills = document.getElementById("user_generalSkills");
         };
         reader.readAsDataURL(file);
     }
-    if (name_heading &&
-        user_contact &&
-        user_email &&
-        user_Language &&
-        user_hobbies &&
-        career_objective &&
-        father_name &&
-        user_DOB &&
-        user_cnic &&
-        user_maritalStatus &&
-        user_relagion &&
-        user_experience &&
-        technical_Skills &&
-        user_generalSkills) {
+    // Validate the text inputs
+    var validateInput = function (input, placeholder) {
+        if (input.value.trim() === "") {
+            input.placeholder = "Please enter ".concat(placeholder);
+            input.style.borderBottom = "2px solid red";
+            return false;
+        }
+        else {
+            input.style.borderBottom = "2px solid black";
+            return true;
+        }
+    };
+    // Validate list inputs
+    var validateList = function (list, listName) {
+        if (list.length === 0) {
+            alert("Please add at least one item to ".concat(listName));
+            return false;
+        }
+        return true;
+    };
+    var isPersonalInfoValid = validateInput(user_name, "your name") &&
+        validateInput(contactNumber, "your contact number") &&
+        validateInput(email, "your email") &&
+        validateInput(dob, "your date of birth") &&
+        validateInput(fatherName, "your father's name") &&
+        validateInput(cnic, "your CNIC number") &&
+        validateInput(religion, "your religion") &&
+        validateInput(maritalStatus, "your marital status");
+    var isExperienceValid = validateList(listingforexperince, "Experience");
+    var isTechnicalSkillsValid = validateList(listingfortechnicalskills, "Technical Skills");
+    var isGeneralSkillsValid = validateList(listingforgeneralskills, "General Skills");
+    var isLanguagesValid = validateList(listingforlanguages, "Languages");
+    var isHobbiesValid = validateList(listingforhobbies, "Hobbies");
+    if (isPersonalInfoValid &&
+        isExperienceValid &&
+        isTechnicalSkillsValid &&
+        isGeneralSkillsValid &&
+        isLanguagesValid &&
+        isHobbiesValid) {
+        // Update the UI elements after validation
         name_heading.innerText = user_name.value;
         user_contact.innerText = contactNumber.value;
         user_email.innerText = email.value;

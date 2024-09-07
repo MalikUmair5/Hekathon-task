@@ -3,14 +3,13 @@
 let toogle_button = document.getElementById("toogle_button");
 let general_skills = document.getElementById("general_skills");
 
-toogle_button?.addEventListener("click", () => {
+toogle_button?.addEventListener("click", (e) => {
+  e.preventDefault();
   if (general_skills && toogle_button) {
     if (toogle_button.innerText === "Hide General Skills") {
-      console.log("hello Pakistan");
       general_skills.style.display = "none";
       toogle_button.innerText = "Show General Skills";
     } else if (toogle_button.innerText === "Show General Skills") {
-      console.log("hello Pakistan");
       general_skills.style.display = "block";
       toogle_button.innerText = "Hide General Skills";
     }
@@ -189,6 +188,8 @@ let user_experience = document.getElementById("user_experience");
 let technical_Skills = document.getElementById("technical_Skills");
 let user_generalSkills = document.getElementById("user_generalSkills");
 
+
+
 document.getElementById("submit_button")?.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -205,47 +206,78 @@ document.getElementById("submit_button")?.addEventListener("click", (e) => {
     reader.readAsDataURL(file);
   }
 
+  // Validate the text inputs
+  const validateInput = (input: HTMLInputElement, placeholder: string) => {
+    if (input.value.trim() === "") {
+      input.placeholder = `Please enter ${placeholder}`;
+      input.style.borderBottom = "2px solid red";
+      return false;
+    } else {
+      input.style.borderBottom = "2px solid black";
+      return true;
+    }
+  };
+
+  // Validate list inputs
+  const validateList = (list: string[], listName: string) => {
+    if (list.length === 0) {
+      alert(`Please add at least one item to ${listName}`);
+      return false;
+    }
+    return true;
+  };
+
+  const isPersonalInfoValid =
+    validateInput(user_name, "your name") &&
+    validateInput(contactNumber, "your contact number") &&
+    validateInput(email, "your email") &&
+    validateInput(dob, "your date of birth") &&
+    validateInput(fatherName, "your father's name") &&
+    validateInput(cnic, "your CNIC number") &&
+    validateInput(religion, "your religion") &&
+    validateInput(maritalStatus, "your marital status");
+
+  const isExperienceValid = validateList(listingforexperince, "Experience");
+  const isTechnicalSkillsValid = validateList(listingfortechnicalskills, "Technical Skills");
+  const isGeneralSkillsValid = validateList(listingforgeneralskills, "General Skills");
+  const isLanguagesValid = validateList(listingforlanguages, "Languages");
+  const isHobbiesValid = validateList(listingforhobbies, "Hobbies");
+
   if (
-    name_heading &&
-    user_contact &&
-    user_email &&
-    user_Language &&
-    user_hobbies &&
-    career_objective &&
-    father_name &&
-    user_DOB &&
-    user_cnic &&
-    user_maritalStatus &&
-    user_relagion &&
-    user_experience &&
-    technical_Skills &&
-    user_generalSkills
+    isPersonalInfoValid &&
+    isExperienceValid &&
+    isTechnicalSkillsValid &&
+    isGeneralSkillsValid &&
+    isLanguagesValid &&
+    isHobbiesValid
   ) {
-    name_heading.innerText = user_name.value;
-    user_contact.innerText = contactNumber.value;
-    user_email.innerText = email.value;
-    career_objective.innerText = careerObjective.value;
-    father_name.innerText = fatherName.value;
-    user_DOB.innerText = dob.value;
-    user_cnic.innerText = cnic.value;
-    user_relagion.innerText = religion.value;
-    user_maritalStatus.innerText = maritalStatus.value;
+    // Update the UI elements after validation
+    name_heading!.innerText = user_name.value;
+    user_contact!.innerText = contactNumber.value;
+    user_email!.innerText = email.value;
+    career_objective!.innerText = careerObjective.value;
+    father_name!.innerText = fatherName.value;
+    user_DOB!.innerText = dob.value;
+    user_cnic!.innerText = cnic.value;
+    user_relagion!.innerText = religion.value;
+    user_maritalStatus!.innerText = maritalStatus.value;
 
     // Update the list of languages
-    user_Language.innerHTML = listingforlanguages
+    user_Language!.innerHTML = listingforlanguages
       .map((item) => `<li>${item}</li>`)
       .join("");
-    user_experience.innerHTML = listingforexperince
+    user_experience!.innerHTML = listingforexperince
       .map((item) => `<li>${item}</li>`)
       .join("");
-    technical_Skills.innerHTML = listingfortechnicalskills
+    technical_Skills!.innerHTML = listingfortechnicalskills
       .map((item) => `<li>${item}</li>`)
       .join("");
-    user_generalSkills.innerHTML = listingforgeneralskills
+    user_generalSkills!.innerHTML = listingforgeneralskills
       .map((item) => `<li>${item}</li>`)
       .join("");
-    user_hobbies.innerHTML = listingforhobbies
+    user_hobbies!.innerHTML = listingforhobbies
       .map((item) => `<li>${item}</li>`)
       .join("");
   }
 });
+
