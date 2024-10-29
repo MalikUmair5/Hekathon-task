@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Milestone 1 -->
+    <div id="main_resume" class="resume_container">
+      <div class="top_blue"></div>
+      <div class="main_container">
+        <div class="left_container">
+          <h1
+            id="name_heading"
+            data-db-key="name"
+            class="name_heading"
+          ></h1>
+          <div class="sub_container mt-20">
+            <h1 class="sub_heading mt-15">Contact:</h1>
+            <p id="user_contact" data-db-key="contactNumber" class="text editable_section"></p>
+            <h1 class="sub_heading mt-10">Email:</h1>
+            <p id="user_email" data-db-key="email" class="text editable_section"></p>
+          </div>
+          <div class="sub_container mt-20">
+            <h1 class="heading">Languages</h1>
+            <hr class="line" />
+            <ul id="user_Language" data-db-key="languages">
+              <li class="editable_section">English</li>
+              <li class="editable_section">Urdu</li>
+              <li class="editable_section"></li>
+            </ul>
+          </div>
+          <div class="sub_container mt-20">
+            <h1 class="heading">Hobbies</h1>
+            <hr class="line" />
+            <ul id="user_hobbies" data-db-key="hobbies">
+              <li class="editable_section">Traveling</li>
+              <li class="editable_section">Outing with Friend</li>
+              <li class="editable_section">Watching Movies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right_container">
+          <h1 class="heading">Career Objective</h1>
+          <hr class="line" />
+          <p id="career_objective" data-db-key="careerObjective" class="text editable_section">
+            To work in a challenging environment demanding all my skills and
+            efforts to explore and adapt myself in different fields and realize
+            my potential where I get the opportunity for continuous learning.
+          </p>
+          <h1 class="heading">Personal Information</h1>
+          <hr class="line" />
+          <table>
+            <tr>
+              <td>Father Name:</td>
+              <td class="editable_section" id="father_name" data-db-key="fatherName"></td>
+            </tr>
+            <tr>
+              <td>Date of Birth:</td>
+              <td class="editable_section" id="user_DOB" data-db-key="dob"></td>
+            </tr>
+            <tr>
+              <td>CNIC:</td>
+              <td class="editable_section" id="user_cnic" data-db-key="cnic"></td>
+            </tr>
+            <tr>
+              <td>Marital Status:</td>
+              <td class="editable_section" id="user_maritalStatus" data-db-key="maritalStatus"></td>
+            </tr>
+            <tr>
+              <td>Religion</td>
+              <td class="editable_section" id="user_relagion" data-db-key="religion"></td>
+            </tr>
+          </table>
+          <h1 class="heading">Technical Skills</h1>
+          <hr class="line" />
+          <ul id="technical_Skills" data-db-key="technicalSkills">
+            <li class="editable_section">Type Script</li>
+            <li class="editable_section">React Js</li>
+            <li class="editable_section">Node Js</li>
+            <li class="editable_section">Next Js</li>
+          </ul>
+          <h1 class="heading editable_section">Work Experience</h1>
+          <hr class="line" />
+          <ul id="user_experience" data-db-key="experience">
+            <li class="editable_section"></li>
+            <li class="editable_section">
+              02 years working experince as a <b>Front-End Developer</b>.
+            </li>
+          </ul>
+          <div class="editable_section" id="general_skills">
+            <h1 class="heading">General Skills</h1>
+            <hr class="line" />
+            <ul id="user_generalSkills" data-db-key="generalSkills">
+              <li class="editable_section">Good Communication Skills</li>
+              <li class="editable_section">Team Work</li>
+              <li class="editable_section">Problem Solving</li>
+              <li class="editable_section">Time Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="dist/shareResume.js"></script>
+  </body>
+</html>

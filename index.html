@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Milestone 3 -->
+    <div class="main_container">
+      <div class="resume_form">
+        <h1 class="heading">Resume Form</h1>
+        <div>
+          <div class="form_group">
+            <!-- Personal Information -->
+            <h2 class="sub_heading">Personal Information</h2>
+            <label for="name_input">Name:</label>
+            <input
+              type="text"
+              id="name_input"
+              placeholder="Enter your full name"
+              data-targeted-element="name_heading"
+            />
+            <label for="contact_number_input">Contact Number:</label>
+            <input
+              type="tel"
+              id="contact_number_input"
+              placeholder="Enter your contact number"
+              data-targeted-element="user_contact"
+            />
+            <label for="email_input">Email:</label>
+            <input
+              type="email"
+              id="email_input"
+              placeholder="Enter your email address"
+              data-targeted-element="user_email"
+            />
+            <label for="dob_input">Date of Birth:</label>
+            <input
+              type="date"
+              id="dob_input"
+              placeholder="Enter your date of birth"
+              data-targeted-element="user_DOB"
+            />
+
+            <!-- Family Information -->
+            <h2 class="sub_heading">Family Information</h2>
+            <label for="father_name_Input">Father's Name:</label>
+            <input
+              type="text"
+              id="father_name_Input"
+              placeholder="Enter your father's name"
+              data-targeted-element="father_name"
+            />
+            <label for="cnic_input">CNIC No:</label>
+            <input
+              type="text"
+              id="cnic_input"
+              placeholder="Enter your CNIC number"
+              data-targeted-element="user_cnic"
+            />
+
+            <!-- Professional Information -->
+            <h2 class="sub_heading">Professional Information</h2>
+            <label for="career_objective_input">Career Objective:</label>
+            <input
+              type="text"
+              id="career_objective_input"
+              placeholder="Enter your career objective"
+              data-targeted-element="career_objective"
+            />
+            <label for="experience">Experience:</label>
+            <input
+              type="text"
+              id="experience"
+              placeholder="Enter your work experience"
+              data-targeted-element="user_experience"
+            />
+
+            <label for="technical_skills_input">Technical Skills:</label>
+            <input
+              type="text"
+              id="technical_skills_input"
+              placeholder="Enter your technical skills"
+              data-targeted-element="technical_Skills"
+            />
+
+            <label for="general_skills_input">General Skills:</label>
+            <input
+              type="text"
+              id="general_skills_input"
+              placeholder="Enter your general skills"
+              data-targeted-element="user_generalSkills"
+            />
+
+            <!-- Additional Information -->
+            <h2 class="sub_heading">Additional Information</h2>
+            <label for="languages_input">Languages:</label>
+            <input
+              type="text"
+              id="languages_input"
+              placeholder="Enter languages separated by space"
+              data-targeted-element="user_Language"
+            />
+
+            <label for="hobbies_input">Hobbies:</label>
+            <input
+              type="text"
+              id="hobbies_input"
+              placeholder="Enter your hobbies"
+              data-targeted-element="user_hobbies"
+            />
+
+            <label for="religion_input">Religion:</label>
+            <input
+              type="text"
+              id="religion_input"
+              placeholder="Enter your religion"
+              data-targeted-element="user_relagion"
+            />
+
+            <label for="marital_status_input">Marital Status:</label>
+            <input
+              type="text"
+              id="marital_status_input"
+              placeholder="Enter your marital status"
+              data-targeted-element="user_maritalStatus"
+            />
+
+            <!-- <button id="download_btn" class="my_button">Download</button> -->
+            <button id="submit_btn" class="my_button">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 1 -->
+      <div id="main_resume" class="resume_container">
+        <div class="top_blue"></div>
+        <div class="main_container">
+          <div class="left_container">
+            <h1
+              id="name_heading"
+              data-localstorage-id="name_input"
+              class="name_heading editable_section"
+            ></h1>
+            <div class="sub_container mt-20">
+              <h1 class="sub_heading mt-15">Contact:</h1>
+              <p id="user_contact" class="text editable_section"></p>
+              <h1 class="sub_heading mt-10">Email:</h1>
+              <p id="user_email" class="text editable_section"></p>
+            </div>
+            <div class="sub_container mt-20">
+              <h1 class="heading">Languages</h1>
+              <hr class="line" />
+              <ul id="user_Language">
+                <li class="editable_section">English</li>
+                <li class="editable_section">Urdu</li>
+                <li class="editable_section"></li>
+              </ul>
+            </div>
+            <div class="sub_container mt-20">
+              <h1 class="heading">Hobbies</h1>
+              <hr class="line" />
+              <ul id="user_hobbies">
+                <li class="editable_section">Traveling</li>
+                <li class="editable_section">Outing with Friend</li>
+                <li class="editable_section">Watching Movies</li>
+              </ul>
+            </div>
+          </div>
+          <div class="right_container">
+            <h1 class="heading">Career Objective</h1>
+            <hr class="line" />
+            <p id="career_objective" class="text editable_section">
+              To work in a challenging environment demanding all my skills and
+              efforts to explore and adapt myself in different fields and
+              realize my potential where I get the opportunity for continuous
+              learning.
+            </p>
+            <h1 class="heading">Personal Information</h1>
+            <hr class="line" />
+            <table>
+              <tr>
+                <td>Father Name:</td>
+                <td class="editable_section" id="father_name"></td>
+              </tr>
+              <tr>
+                <td>Date of Birth:</td>
+                <td class="editable_section" id="user_DOB"></td>
+              </tr>
+              <tr>
+                <td>CNIC:</td>
+                <td class="editable_section" id="user_cnic"></td>
+              </tr>
+              <tr>
+                <td>Marital Status:</td>
+                <td class="editable_section" id="user_maritalStatus"></td>
+              </tr>
+              <tr>
+                <td>Religion</td>
+                <td class="editable_section" id="user_relagion"></td>
+              </tr>
+            </table>
+            <h1 class="heading">Technical Skills</h1>
+            <hr class="line" />
+            <ul id="technical_Skills">
+              <li class="editable_section">Type Script</li>
+              <li class="editable_section">React Js</li>
+              <li class="editable_section">Node Js</li>
+              <li class="editable_section">Next Js</li>
+            </ul>
+            <h1 class="heading editable_section">Work Experience</h1>
+            <hr class="line" />
+            <ul id="user_experience">
+              <li class="editable_section"></li>
+              <li class="editable_section">
+                02 years working experince as a <b>Front-End Developer</b>.
+              </li>
+            </ul>
+            <div class="editable_section" id="general_skills">
+              <h1 class="heading">General Skills</h1>
+              <hr class="line" />
+              <ul id="user_generalSkills">
+                <li class="editable_section">Good Communication Skills</li>
+                <li class="editable_section">Team Work</li>
+                <li class="editable_section">Problem Solving</li>
+                <li class="editable_section">Time Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9/firebase-database.js"></script> 
+    <script type="module" src="dist/app.js"></script>
+  </body>
+</html>

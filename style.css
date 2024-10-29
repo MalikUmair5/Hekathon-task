@@ -1,0 +1,195 @@
+/* Milestone One */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input.error::placeholder {
+  color: red;
+  border-bottom: 2px  red;
+}
+.resume_container {
+  width: 794px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  height: 1344px;
+  padding: 10px;
+}
+.top_blue {
+  height: 50px;
+  background-color: #376092;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.main_container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.heading {
+  color: #244061;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.name_heading {
+  color: #244061;
+  font-size: 32px;
+}
+
+.sub_heading {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.text {
+  font-size: 16px;
+  color: black;
+  margin: 0;
+}
+
+.line {
+  margin-top: 0 !important;
+}
+
+.right_container {
+  border: #4f81bd 3px solid;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.left_container {
+  width: 250px;
+}
+
+.sub_container {
+  margin-top: 30px;
+}
+
+.mt-15 {
+  margin-top: 15 px;
+}
+
+.hide_display {
+  display: none;
+}
+
+.btn_div {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.profile_image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+.profile_picture {
+  display: block;
+}
+.centerit{
+  margin: 10px auto;
+  text-align: center;
+}
+
+.my_button {
+  background-color: #376092;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.my_button:hover {
+  background-color: #6087b8;
+}
+
+.del_button {
+  background-color: #eb1831;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.del_button:hover {
+  background-color: #eb1831;
+}
+
+/* Milestone 3 */
+
+.resume_form {
+  max-width: 600px;
+
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.resume_form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #376092;
+}
+
+.resume_form label {
+  display: block;
+}
+
+.resume_form input:focus {
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #6087b8;
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for mobile devices */
+  .resume_container {
+    width: 100%;
+  }
+  .main_container {
+    flex-wrap: wrap;
+  }
+  .profile_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    right: -40px;
+    top: -10px;
+  }
+  .img_container {
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .resume_container {
+    width: 100%;
+  }
+  /* Styles for tablet devices */
+}
+
+@media only screen and (min-width: 769px) {
+  /* Styles for desktop devices */
+}
