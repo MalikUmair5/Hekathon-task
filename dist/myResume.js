@@ -52,7 +52,8 @@ function fetchdata() {
             user_hobbies.innerText = userData.hobbies;
             user_experience.innerText = userData.experience;
             const destinationUrl = `shareResume.html?uuid=${encodeURIComponent(uuid)}`;
-            share_resume.value = destinationUrl;
+            const baseUrl = `${window.location.origin}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/") + 1)}`;
+            share_resume.value = baseUrl + destinationUrl;
         }
         else {
             console.log("UUID not found in URL.");

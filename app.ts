@@ -79,34 +79,72 @@ submit_btn?.addEventListener("click", async (e) => {
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const cnicRegex = /^\d{13}$/;
 
-  if (name.length < 3) {
+  if (name_input.value.length < 3) {
     console.log("Valid name is required");
     name_input.placeholder = "Valid name is required";
-    name_input.classList.add("error")
-  } else if (!phoneRegex.test(contactNumber)) {
+    name_input.classList.add("error");
+    name_input.focus();
+  } else if (!phoneRegex.test(contact_number_input.value)) {
     console.log("Valid contact number is required");
-  } else if (!emailRegex.test(email)) {
+    contact_number_input.placeholder = "Valid contact number is required";
+    contact_number_input.classList.add("error");
+    contact_number_input.focus();
+  } else if (!emailRegex.test(email_input.value)) {
     console.log("Valid email is required");
-  } else if (!dob) {
+    email_input.placeholder = "Valid email is required";
+    email_input.classList.add("error");
+    email_input.focus();
+  } else if (!dob_input.value) {
     console.log("Date of birth is required");
-  } else if (fatherName.length < 3) {
+    dob_input.placeholder = "Date of birth is required";
+    dob_input.classList.add("error");
+    dob_input.focus();
+  } else if (father_name_Input.value.length < 3) {
     console.log("Valid father's name is required");
-  } else if (!cnicRegex.test(cnic)) {
+    father_name_Input.placeholder = "Valid father's name is required";
+    father_name_Input.classList.add("error");
+    father_name_Input.focus();
+  } else if (!cnicRegex.test(cnic_input.value)) {
     console.log("Valid CNIC is required (13 digits)");
-  } else if (experience.length < 3) {
+    cnic_input.placeholder = "Valid CNIC is required (13 digits)";
+    cnic_input.classList.add("error");
+    cnic_input.focus();
+  } else if (user_experience.value.length < 3) {
     console.log("Experience details are required");
-  } else if (technicalSkills.length < 3) {
+    user_experience.placeholder = "Experience details are required";
+    user_experience.classList.add("error");
+    user_experience.focus();
+  } else if (technical_skills_input.value.length < 3) {
     console.log("At least one technical skill is required");
-  } else if (generalSkills.length < 3) {
+    technical_skills_input.placeholder =
+      "At least one technical skill is required";
+    technical_skills_input.classList.add("error");
+    technical_skills_input.focus();
+  } else if (general_skills_input.value.length < 3) {
     console.log("At least one general skill is required");
-  } else if (languages.length < 2) {
+    general_skills_input.placeholder = "At least one general skill is required";
+    general_skills_input.classList.add("error");
+    general_skills_input.focus();
+  } else if (languages_input.value.length < 2) {
     console.log("Languages cannot be empty");
-  } else if (hobbies.length < 2) {
+    languages_input.placeholder = "Languages cannot be empty";
+    languages_input.classList.add("error");
+    languages_input.focus();
+  } else if (hobbies_input.value.length < 2) {
     console.log("Hobbies cannot be empty");
-  } else if (religion.length < 3) {
+    hobbies_input.placeholder = "Hobbies cannot be empty";
+    hobbies_input.classList.add("error");
+    hobbies_input.focus();
+  } else if (religion_input.value.length < 3) {
     console.log("Religion is required");
-  } else if (maritalStatus.length < 3) {
+    religion_input.placeholder = "Religion is required";
+    religion_input.classList.add("error");
+    religion_input.focus();
+  } else if (marital_status_input.value.length < 3) {
     console.log("Marital status is required");
+    marital_status_input.placeholder = "Marital status is required";
+    marital_status_input.classList.add("error");
+    marital_status_input.focus();
   } else {
     const userId = crypto.randomUUID(); // Generate a unique ID
     const data = {
