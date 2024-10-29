@@ -76,7 +76,7 @@ async function fetchdata() {
     father_name.innerText = userData.fatherName;
     user_DOB.innerText = userData.dob;
     user_cnic.innerText = userData.cnic;
-    user_maritalStatus.innerText = userData.cnic;
+    user_maritalStatus.innerText = userData.maritalStatus;
     user_relagion.innerText = userData.religion;
     career_objective.innerText =
       userData.careerObjective.length > 5
